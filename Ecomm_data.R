@@ -36,3 +36,14 @@ View(shp)
 barplot(shp$`data$Customer_care_calls`, names.arg=shp$`data$Mode_of_Shipment`,
         main = "Shipment mode With most customers calls", 
          xlab ="Mode", ylab = "calls" )
+
+#Who Purchased Imp products
+imp<-table(data$Product_importance,data$Gender)
+
+barplot(imp,beside = TRUE, 
+        col = c("Red", "skyblue1","skyblue3"), 
+        main = "Who Purchased Imp products", 
+        width=c(2,3),
+        legend.text = rownames(imp),
+        args.legend = list(cex=0.5,x = "topleft"))
+
